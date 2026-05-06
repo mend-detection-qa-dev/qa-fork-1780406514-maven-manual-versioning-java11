@@ -1,0 +1,184 @@
+{
+    "schema_version": "1.0",
+    "pm": "maven",
+    "java_version_tested": "11.0.20+8",
+    "java_vendor": "temurin",
+    "source_file": "pom.xml",
+    "manifest": "pom.xml",
+    "lockfile": null,
+    "detection_mode": "resolver-driven",
+    "pattern": "manual-versioning-java11",
+    "notes": "Single-module Maven project. Three direct compile-scope dependencies, each with an explicit hardcoded version string. No version properties, no dependencyManagement, no BOM imports, no version ranges. Build is pinned to Temurin JDK 11.0.20+8 via maven-toolchains-plugin. Resolved transitives reflect Maven Central at the exact declared versions. Baseline probe for manual (explicit) version pinning detection coverage.",
+    "packages": [
+        {
+            "groupId": "com.fasterxml.jackson.core",
+            "artifactId": "jackson-databind",
+            "version": "2.15.2",
+            "version_constraint": "2.15.2",
+            "scope": "compile",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "filename": "jackson-databind-2.15.2.jar",
+            "children": [
+                {
+                    "groupId": "com.fasterxml.jackson.core",
+                    "artifactId": "jackson-annotations",
+                    "version": "2.15.2",
+                    "version_constraint": "2.15.2",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "jackson-annotations-2.15.2.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "com.fasterxml.jackson.core",
+                    "artifactId": "jackson-core",
+                    "version": "2.15.2",
+                    "version_constraint": "2.15.2",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "jackson-core-2.15.2.jar",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "groupId": "org.apache.commons",
+            "artifactId": "commons-lang3",
+            "version": "3.13.0",
+            "version_constraint": "3.13.0",
+            "scope": "compile",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "filename": "commons-lang3-3.13.0.jar",
+            "children": []
+        },
+        {
+            "groupId": "com.google.guava",
+            "artifactId": "guava",
+            "version": "32.1.2-jre",
+            "version_constraint": "32.1.2-jre",
+            "scope": "compile",
+            "group": "main",
+            "source": "registry",
+            "direct": true,
+            "filename": "guava-32.1.2-jre.jar",
+            "children": [
+                {
+                    "groupId": "com.google.guava",
+                    "artifactId": "failureaccess",
+                    "version": "1.0.1",
+                    "version_constraint": "1.0.1",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "failureaccess-1.0.1.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "com.google.guava",
+                    "artifactId": "listenablefuture",
+                    "version": "9999.0-empty-to-avoid-conflict-with-guava",
+                    "version_constraint": "9999.0-empty-to-avoid-conflict-with-guava",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "com.google.code.findbugs",
+                    "artifactId": "jsr305",
+                    "version": "3.0.2",
+                    "version_constraint": "3.0.2",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "jsr305-3.0.2.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "org.checkerframework",
+                    "artifactId": "checker-qual",
+                    "version": "3.33.0",
+                    "version_constraint": "3.33.0",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "checker-qual-3.33.0.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "com.google.errorprone",
+                    "artifactId": "error_prone_annotations",
+                    "version": "2.18.0",
+                    "version_constraint": "2.18.0",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "error_prone_annotations-2.18.0.jar",
+                    "children": []
+                },
+                {
+                    "groupId": "com.google.j2objc",
+                    "artifactId": "j2objc-annotations",
+                    "version": "2.8",
+                    "version_constraint": "2.8",
+                    "scope": "compile",
+                    "group": "main",
+                    "source": "registry",
+                    "direct": false,
+                    "filename": "j2objc-annotations-2.8.jar",
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "total_packages": 11,
+    "direct_count": 3,
+    "transitive_count": 8,
+    "unique_packages": [
+        "com.fasterxml.jackson.core:jackson-databind:2.15.2",
+        "com.fasterxml.jackson.core:jackson-annotations:2.15.2",
+        "com.fasterxml.jackson.core:jackson-core:2.15.2",
+        "org.apache.commons:commons-lang3:3.13.0",
+        "com.google.guava:guava:32.1.2-jre",
+        "com.google.guava:failureaccess:1.0.1",
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        "com.google.code.findbugs:jsr305:3.0.2",
+        "org.checkerframework:checker-qual:3.33.0",
+        "com.google.errorprone:error_prone_annotations:2.18.0",
+        "com.google.j2objc:j2objc-annotations:2.8"
+    ],
+    "mend_detection_expectations": {
+        "all_packages_must_appear": true,
+        "source_for_all": "registry",
+        "group_for_all": "main",
+        "no_missing_transitives": true,
+        "exact_version_pins_only": true,
+        "no_eviction": true,
+        "no_version_properties": true,
+        "no_bom_imports": true,
+        "artifactId_format_note": "Maven artifacts carry no Scala/language suffix. Assert on bare artifactId. Mend emits filename as <artifactId>-<version>.jar for compile-scope jars.",
+        "failure_modes_exercised": [
+            "guava transitives missing -- Mend does not traverse guava compile-scope children",
+            "jackson-annotations or jackson-core missing -- jackson-databind transitives not traversed",
+            "listenablefuture version reported incorrectly due to unusual version string 9999.0-empty-to-avoid-conflict-with-guava",
+            "error_prone_annotations artifactId corrupted due to underscore in name",
+            "version reported as range or latest instead of verbatim hardcoded string",
+            "group classified as test instead of main",
+            "source classified as local instead of registry"
+        ]
+    }
+}

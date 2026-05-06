@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Project-level toolchains reference.
+
+  This file documents the toolchain entry that must be present in
+  ~/.m2/toolchains.xml on the build machine.  Maven reads toolchain
+  *registrations* from ~/.m2/toolchains.xml, not from this file.
+  Copy the <toolchain> block below into ~/.m2/toolchains.xml and
+  adjust <jdkHome> to match the actual Temurin 11.0.20+8 installation
+  path on your system.
+
+  Example ~/.m2/toolchains.xml entry:
+
+  <toolchains>
+    <toolchain>
+      <type>jdk</type>
+      <provides>
+        <version>11</version>
+        <vendor>temurin</vendor>
+        <id>temurin-11.0.20+8</id>
+      </provides>
+      <configuration>
+        <jdkHome>/path/to/temurin-11.0.20+8</jdkHome>
+      </configuration>
+    </toolchain>
+  </toolchains>
+-->
+<toolchains>
+  <toolchain>
+    <type>jdk</type>
+    <provides>
+      <version>11</version>
+      <vendor>temurin</vendor>
+      <id>temurin-11.0.20+8</id>
+    </provides>
+    <configuration>
+      <!--
+        Replace this path with the actual Temurin 11.0.20+8 JDK home.
+        On macOS with SDKMAN:  ~/.sdkman/candidates/java/11.0.20-tem
+        On Linux:              /usr/lib/jvm/temurin-11.0.20+8
+      -->
+      <jdkHome>${env.JAVA_HOME}</jdkHome>
+    </configuration>
+  </toolchain>
+</toolchains>

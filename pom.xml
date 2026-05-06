@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.example</groupId>
+  <artifactId>maven-manual-versioning-java11</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>maven-manual-versioning-java11</name>
+  <description>
+    Probe: manual (explicit) version pinning with Java 11 toolchain.
+    Every compile-scope dependency carries a hardcoded version string.
+    No properties, no BOM imports, no dependencyManagement, no version ranges.
+  </description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- Hardcoded version string: 2.15.2 -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- Hardcoded version string: 3.13.0 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.13.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <!-- Hardcoded version string: 32.1.2-jre -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>32.1.2-jre</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Pin to Temurin 11.0.20+8 via toolchain -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>toolchain</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <toolchains>
+            <jdk>
+              <version>11</version>
+              <vendor>temurin</vendor>
+            </jdk>
+          </toolchains>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+          <release>11</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
